@@ -1,7 +1,8 @@
 const btnSubmit = document.getElementById('submit');
 const btnReset = document.getElementById('reset');
 const container = document.getElementById('film-info');
-const titleSearch = document.getElementById('title');
+const titleSearch = document.getElementById('titleSearch');
+const btnOptional = document.getElementById('optional');
 
 const startAPI = async e => {
   e.preventDefault();
@@ -48,6 +49,7 @@ const startAPI = async e => {
 
 const resetApi = async e => {
   e.preventDefault();
+
   try {
     const empty = e => {
       while (e.firstElementChild) {
@@ -61,5 +63,21 @@ const resetApi = async e => {
   }
 };
 
+const optional = async e => {
+  e.preventDefault();
+  const optionalDiv = document.getElementById('optionalDiv');
+  optionalDiv.setAttribute('onclick', 'optional()');
+  try {
+    if (optionalDiv.style.display === 'none') {
+      optionalDiv.style.display = 'block';
+    } else {
+      optionalDiv.style.display = 'none';
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
+
 btnSubmit.addEventListener('click', startAPI);
 btnReset.addEventListener('click', resetApi);
+btnOptional.addEventListener('click', optional);

@@ -8,12 +8,16 @@
     <title>movie search</title>
   </head>
   <body>
-    <form>
-      <label for="title">Film title</label>
-      <input type="search" id="title" />
-      <input type="submit" name="submit" id="submit" />
-      <input type="reset" name="reset" id="reset" />
-    </form>
+    <section>
+      <form action="" method="GET">
+        <label for="title">Film title</label>
+        <input type="search" id="titleSearch" tabindex="1" autofocus />
+        <input type="submit" name="submit" id="submit" tabindex="2" />
+        <input type="reset" name="reset" id="reset" tabindex="3" />
+        <button type="button" id="optional" tabindex="4">optional</button>
+        <div id="optionalDiv">optional form</div>
+      </form>
+    </section>
     <container id="film-info"></container>
     <footer>movie search</footer>
   </body>

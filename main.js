@@ -14,13 +14,15 @@ const startAPI = async e => {
         '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d'
     );
     console.log(res);
-    console.log(res.data.results.length);
     let i = 0;
     while (i < res.data.results.length) {
       const resPoster = res.data.results[i].poster_path;
       const resTitle = res.data.results[i].original_title;
       const resGenre = res.data.results[i].genre_ids;
       const resOverview = res.data.results[i].overview;
+      const resPopularity = res.data.results[i].popularity;
+      let resReleaseDate = res.data.results[i].release_date;
+      const resVoteAverage = res.data.results[i].vote_average;
 
       const div = document.createElement('div');
       container.appendChild(div);
@@ -30,16 +32,33 @@ const startAPI = async e => {
       div.appendChild(img);
 
       let h4 = document.createElement('h4');
-      h4.innerHTML = resGenre;
+      h4.innerHTML = resGenre + ' genre/s';
       div.appendChild(h4);
 
       let h1 = document.createElement('h1');
       h1.innerText = resTitle;
       div.appendChild(h1);
 
-      let p = document.createElement('p');
-      p.innerHTML = resOverview;
-      div.appendChild(p);
+      let pOverview = document.createElement('p');
+      pOverview.innerHTML = resOverview;
+      div.appendChild(pOverview);
+
+      let pPopularity = document.createElement('p');
+      pPopularity.innerHTML = resPopularity + ' popularity';
+      div.appendChild(pPopularity);
+
+      let pReleaseDate = document.createElement('p');
+      const reverseDate = resReleaseDate => {
+        return resReleaseDate.split('-').reverse().join('-');
+      };
+      resReleaseDate = reverseDate(resReleaseDate);
+      pReleaseDate.innerHTML = resReleaseDate;
+      div.appendChild(pReleaseDate);
+
+      let pVoteAverage = document.createElement('p');
+      pVoteAverage.innerHTML = resVoteAverage + ' average vote';
+      div.appendChild(pVoteAverage);
+
       i++;
     }
   } catch (err) {
@@ -68,7 +87,7 @@ const optional = async e => {
   const optionalDiv = document.getElementById('optionalDiv');
   optionalDiv.setAttribute('onclick', 'optional()');
   try {
-    if (optionalDiv.style.display === 'none') {
+    if (optionalDiv.style.display !== 'block') {
       optionalDiv.style.display = 'block';
     } else {
       optionalDiv.style.display = 'none';

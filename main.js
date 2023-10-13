@@ -4,14 +4,18 @@ const container = document.getElementById('film-info');
 const titleSearch = document.getElementById('titleSearch');
 const btnOptional = document.getElementById('optional');
 
+const yyyy = document.getElementById('yyyy');
+const kids = document.getElementById('kids');
+
 const startAPI = async e => {
   e.preventDefault();
-
   try {
     const res = await axios.get(
       'https://api.themoviedb.org/3/search/movie?query=' +
         titleSearch.value +
-        '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d'
+        '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d' +
+        yyyy.value +
+        kids.value
     );
     console.log(res);
     let i = 0;

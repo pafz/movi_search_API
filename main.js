@@ -1,21 +1,45 @@
-const btnSubmit = document.getElementById('submit');
-const btnReset = document.getElementById('reset');
+const submitBtn = document.getElementById('submit');
+const resetBtn = document.getElementById('reset');
 const container = document.getElementById('film-info');
 const titleSearch = document.getElementById('titleSearch');
-const btnOptional = document.getElementById('optional');
+const optionalBtn = document.getElementById('optional');
+
+const div = document.createElement('div');
 
 const yyyy = document.getElementById('yyyy');
-const kids = document.getElementById('kids');
+const adult = document.getElementById('adult');
+
+const toggleFilters = async e => {
+  e.preventDefault();
+  try {
+    if (optionalDiv.style.display !== 'block') {
+      optionalDiv.style.display = 'block';
+    } else {
+      optionalDiv.style.display = 'none';
+    }
+  } catch (err) {
+    console.log(err);
+  }
+};
 
 const startAPI = async e => {
   e.preventDefault();
   try {
     const res = await axios.get(
-      'https://api.themoviedb.org/3/search/movie?query=' +
+      'https://api.themoviedb.org/3/search/movie?' +
+        'query=' +
         titleSearch.value +
-        '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d' +
+        '&year=' +
         yyyy.value +
-        kids.value
+        // 'club' +
+        // '&year=1984' +
+        '&include_adult=' +
+        adult.checked +
+        '&api_key=600dc298bedbd11d25118262a343371d'
+      // +
+      // '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d' +
+      // yyyy.value +
+      // adult.value
     );
     console.log(res);
     let i = 0;
@@ -27,8 +51,8 @@ const startAPI = async e => {
       const resPopularity = res.data.results[i].popularity;
       let resReleaseDate = res.data.results[i].release_date;
       const resVoteAverage = res.data.results[i].vote_average;
+      const resAdult = res.data.results[i].adult;
 
-      const div = document.createElement('div');
       container.appendChild(div);
 
       let img = document.createElement('img');
@@ -65,6 +89,19 @@ const startAPI = async e => {
 
       i++;
     }
+    const totalPages = res.data.total_pages;
+    if (totalPages > 20) {
+      let nextBtn = document.createElement('button');
+      nextBtn.setAttribute('id', 'nextBtn');
+      nextBtn.innerText = 'next';
+      div.appendChild(nextBtn);
+
+      let iPages = Math.ceil(totalPages / 20);
+      const iSlice = 1;
+      while (iSlice > iPages) {
+        console.log(i);
+      }
+    }
   } catch (err) {
     console.error(err);
   }
@@ -86,21 +123,6 @@ const resetApi = async e => {
   }
 };
 
-const optional = async e => {
-  e.preventDefault();
-  const optionalDiv = document.getElementById('optionalDiv');
-  optionalDiv.setAttribute('onclick', 'optional()');
-  try {
-    if (optionalDiv.style.display !== 'block') {
-      optionalDiv.style.display = 'block';
-    } else {
-      optionalDiv.style.display = 'none';
-    }
-  } catch (err) {
-    console.log(err);
-  }
-};
-
-btnSubmit.addEventListener('click', startAPI);
-btnReset.addEventListener('click', resetApi);
-btnOptional.addEventListener('click', optional);
+submitBtn.addEventListener('click', startAPI);
+resetBtn.addEventListener('click', resetApi);
+optionalBtn.addEventListener('click', toggleFilters);

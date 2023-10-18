@@ -1,13 +1,16 @@
-const submitBtn = document.getElementById('submit');
+const submitBtn = document.getElementById('searchBtn');
 const resetBtn = document.getElementById('reset');
 const container = document.getElementById('film-info');
 const titleSearch = document.getElementById('titleSearch');
 const optionalBtn = document.getElementById('optional');
 
 const div = document.createElement('div');
+const search = document.getElementById('search');
 
 const yyyy = document.getElementById('yyyy');
 const adult = document.getElementById('adult');
+
+let nextBtnPrinted = false;
 
 const toggleFilters = async e => {
   e.preventDefault();
@@ -22,8 +25,7 @@ const toggleFilters = async e => {
   }
 };
 
-const startAPI = async e => {
-  e.preventDefault();
+const searchMovies = async (page = 1) => {
   try {
     const res = await axios.get(
       'https://api.themoviedb.org/3/search/movie?' +
@@ -31,17 +33,19 @@ const startAPI = async e => {
         titleSearch.value +
         '&year=' +
         yyyy.value +
+        '&page=' +
+        page +
         // 'club' +
         // '&year=1984' +
-        '&include_adult=' +
-        adult.checked +
+        // '&include_adult=' +
+        // adult.checked +
         '&api_key=600dc298bedbd11d25118262a343371d'
       // +
       // '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d' +
       // yyyy.value +
       // adult.value
     );
-    console.log(res);
+
     let i = 0;
     while (i < res.data.results.length) {
       const resPoster = res.data.results[i].poster_path;
@@ -52,6 +56,7 @@ const startAPI = async e => {
       let resReleaseDate = res.data.results[i].release_date;
       const resVoteAverage = res.data.results[i].vote_average;
       const resAdult = res.data.results[i].adult;
+      let iPages = res.data.page;
 
       container.appendChild(div);
 
@@ -89,18 +94,22 @@ const startAPI = async e => {
 
       i++;
     }
-    const totalPages = res.data.total_pages;
-    if (totalPages > 20) {
-      let nextBtn = document.createElement('button');
-      nextBtn.setAttribute('id', 'nextBtn');
-      nextBtn.innerText = 'next';
-      div.appendChild(nextBtn);
 
-      let iPages = Math.ceil(totalPages / 20);
-      const iSlice = 1;
-      while (iSlice > iPages) {
-        console.log(i);
+    const totalPages = res.data.total_pages;
+    if (totalPages > 1) {
+      if (!nextBtnPrinted) {
+        nextBtnPrinted = true;
+        let nextBtn = document.createElement('button');
+        nextBtn.setAttribute('id', 'nextBtn');
+        nextBtn.innerText = 'next';
+        search.appendChild(nextBtn);
       }
+
+      nextBtn.addEventListener('click', () => {
+        div.innerHTML = '';
+        page++;
+        searchMovies(page);
+      });
     }
   } catch (err) {
     console.error(err);
@@ -123,6 +132,8 @@ const resetApi = async e => {
   }
 };
 
-submitBtn.addEventListener('click', startAPI);
+submitBtn.addEventListener('click', () => {
+  searchMovies();
+});
 resetBtn.addEventListener('click', resetApi);
 optionalBtn.addEventListener('click', toggleFilters);

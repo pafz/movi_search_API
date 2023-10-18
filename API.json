@@ -1,94 +1,393 @@
-{
-    "adult": false,
-    "backdrop_path": "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
-    "belongs_to_collection": null,
-    "budget": 63000000,
-    "genres": [
+  {
+    "page": 1,
+    "results": [
       {
-        "id": 18,
-        "name": "Drama"
+        "adult": false,
+        "backdrop_path": "/lEMO9pVODhiWLgJzuCaYlfJkdNz.jpg",
+        "genre_ids": [
+          27,
+          53
+        ],
+        "id": 1010826,
+        "original_language": "es",
+        "original_title": "El club de los lectores criminales",
+        "overview": "Eight horror-loving friends fight for their lives when a killer clown who seems to know the grim secret they share begins to pick them off, one by one.",
+        "popularity": 78.807,
+        "poster_path": "/zZH0sAUV0nfEEDBUdWBMLjs2XnN.jpg",
+        "release_date": "2023-08-25",
+        "title": "Killer Book Club",
+        "video": false,
+        "vote_average": 5.757,
+        "vote_count": 185
       },
       {
-        "id": 53,
-        "name": "Thriller"
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          99
+        ],
+        "id": 700805,
+        "original_language": "en",
+        "original_title": "Club",
+        "overview": "Writes Shimizu: \"I used to work as a photographer hired by a website to promote NYC and the Hamptons nightlife. The promoters would hire the people I worked for to send me over to their party to take photos of the people there. I would go to 2-3 different clubs a night, 4 nights a week. The range in partygoers was pretty big. During my final few months with the company, I was mainly assigned to an after-party spot on Broadway called Pangaea. At Pangaea, I photographed Ice T, Sting, among others. The job, for the most part, was really fun. I drank so much Red Bull vodka.\"",
+        "popularity": 0.6,
+        "poster_path": "/73EcZL182VbTi2YdKikhgZJoU2q.jpg",
+        "release_date": "2012-01-01",
+        "title": "Club",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
       },
       {
-        "id": 35,
-        "name": "Comedy"
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [],
+        "id": 731548,
+        "original_language": "en",
+        "original_title": "Club",
+        "overview": "A group of friends use their talents to host a party for those who, like them, have been pushed to the fringes of the mainstream club scene. A vibrant exploration of queer black women forging space for themselves against the landscape of London's nightlife. Esme Allman uses poetry, dance and music to propel us through CLUB, a lively celebration of black queerness.  A theatre piece supported by Theatre Deli. Fringe of Colour Films supported the development of CLUB into a digitalised production.",
+        "popularity": 0.6,
+        "poster_path": "/tEBWZJzcYOIQ1ADcS4ab4GxwPX5.jpg",
+        "release_date": "2020-08-08",
+        "title": "Club",
+        "video": false,
+        "vote_average": 0,
+        "vote_count": 0
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/bFzW8J9ydLic7ZLCT4sHfY2iAmt.jpg",
+        "genre_ids": [
+          18,
+          35
+        ],
+        "id": 297090,
+        "original_language": "ja",
+        "original_title": "ちょっとかわいいアイアンメイデン",
+        "overview": "The \"Torture Club\" is an official after-school activity at the private school Saint Honesty Gakuen. Yuzuki has no idea about the club when she enrolls, and gets abducted by the club members and hauled off the club-room. There, she finds out that upper-class student Aoi, her secret idol, is in the club, and decides to join, but…",
+        "popularity": 24.3,
+        "poster_path": "/oGbY4oF5vTM57Ggp7cxQxC7jJCg.jpg",
+        "release_date": "2014-07-19",
+        "title": "The Torture Club",
+        "video": false,
+        "vote_average": 5,
+        "vote_count": 28
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/fc2GbGrUjula8mgdAaKGJCKBSpI.jpg",
+        "genre_ids": [
+          16,
+          10751
+        ],
+        "id": 74658,
+        "original_language": "it",
+        "original_title": "Winx Club - Magica avventura",
+        "overview": "School for fairies Alfea celebrates the inauguration of the new school year when the party is interrupted by Icy, Darcy and Stormy, the perfidious Trix. The Winx without Bloom, are forced to remedy the confusion created by the witches who, having ruined the party, steal a powerful and mysterious object. Meanwhile, Bloom is on Domino, which is experiencing the best moments of his new life as a princess. He finally found his parents and Sky asks her to marry him. But not all gold that glitters, the three Witches are Ancestors in fact come back to haunt Stella, Aisha, Tecna, Musa, Flora and Bloom. Moreover, Erendor, Sky's father, forbids his son to marry the princess of Domino. A dark secret lies in the realm of Eraklyon and now that Sky, the legitimate ruler of the kingdom, as known.",
+        "popularity": 9.481,
+        "poster_path": "/6P1Z0voZehYFDRNHigG2XAelKVa.jpg",
+        "release_date": "2010-10-29",
+        "title": "Winx Club - Magic Adventure",
+        "video": false,
+        "vote_average": 7.089,
+        "vote_count": 107
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/tlHL9MdWV5ylXUG4WQPsGoTrdll.jpg",
+        "genre_ids": [
+          14,
+          16,
+          10751
+        ],
+        "id": 80797,
+        "original_language": "it",
+        "original_title": "Winx Club - Il segreto del regno perduto",
+        "overview": "Sixteen years ago the most powerful warrior wizards of the Magic Dimension sacrificed themselves to fight against absolute evil. Now the fate of a kingdom is in the hands of a young girl - Bloom, the fairy of the Dragon's flame. Accompanied by her Winx Club girlfriends, Bloom must overcome the greatest challenge of all: enter the depths of the obscure dimension, fight against evil to bring her parents back to life and reveal the mystery linked to her origins. The destiny of the entire Magic Dimension depends on the outcome of this conflict.",
+        "popularity": 10.255,
+        "poster_path": "/9T37TmZ7WV8qgJNoE1mTQchUXug.jpg",
+        "release_date": "2007-11-29",
+        "title": "Winx Club: The Secret of the Lost Kingdom",
+        "video": false,
+        "vote_average": 7.132,
+        "vote_count": 205
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/i2Jajiru34tp7YaJmg96T6e6wDO.jpg",
+        "genre_ids": [
+          10751,
+          14,
+          16
+        ],
+        "id": 290841,
+        "original_language": "it",
+        "original_title": "Winx Club - Il mistero degli abissi",
+        "overview": "The archenemies of the Winx Club, the Trix witches, team up with the evil nymph Politea and find out that, to defeat the fairies once and for all and become invincible, it takes very little: a Pearl hidden in the Deep of the Infinite Ocean! As small as powerful, the Pearl of the Depth gives enormous powers to those who possess it!  For the Winx there is not a minute to waste: how will they stop the plans of their enemies before it's too late?  Get ready: the most dangerous mission of the Winx is about to begin!",
+        "popularity": 9.294,
+        "poster_path": "/tf0QLY55SjgEDHqk44LnkRkfemM.jpg",
+        "release_date": "2014-09-04",
+        "title": "Winx Club: The Mystery of the Abyss",
+        "video": false,
+        "vote_average": 7.173,
+        "vote_count": 78
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/s5EsP0RocW4apiwTp1CRSHb0mOb.jpg",
+        "genre_ids": [
+          18,
+          9648,
+          53
+        ],
+        "id": 319995,
+        "original_language": "es",
+        "original_title": "El club",
+        "overview": "In a secluded house in a small seaside town live four unrelated men and the woman who tends to the house and their needs. All former priests, they have been sent to this quiet exile to purge the sins of their pasts, the separation from their communities the worst form of punishment by the Church. They keep to a strict daily schedule devoid of all temptation and spontaneity, each moment a deliberate effort to atone for their wrongdoings.",
+        "popularity": 9.282,
+        "poster_path": "/cSLJxkNyKLnfNtyR16bzlHKBQW7.jpg",
+        "release_date": "2015-05-28",
+        "title": "The Club",
+        "video": false,
+        "vote_average": 6.8,
+        "vote_count": 236
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/k03NKr2mgma98hnM4xAcvaUHWlP.jpg",
+        "genre_ids": [
+          10749,
+          18,
+          14,
+          35
+        ],
+        "id": 261102,
+        "original_language": "es",
+        "original_title": "El Club de los Incomprendidos",
+        "overview": "Valeria has just moved to Madrid after her parent's separation. What at first seems a bad start for her new life becomes the beginning of an amazing life experience. New friendships, a city full of possibilities, first love...",
+        "popularity": 9.349,
+        "poster_path": "/3S3e4cQTs1S6QqdprmcHwxL09mb.jpg",
+        "release_date": "2014-12-25",
+        "title": "The Club of the Misunderstood",
+        "video": false,
+        "vote_average": 6.768,
+        "vote_count": 393
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/hZkgoQYus5vegHoetLkCJzb17zJ.jpg",
+        "genre_ids": [
+          18
+        ],
+        "id": 550,
+        "original_language": "en",
+        "original_title": "Fight Club",
+        "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
+        "popularity": 77.403,
+        "poster_path": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
+        "release_date": "1999-10-15",
+        "title": "Fight Club",
+        "video": false,
+        "vote_average": 8.439,
+        "vote_count": 27341
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/21N7zpYgIb68WxSHmLfn4uRWNyV.jpg",
+        "genre_ids": [
+          18
+        ],
+        "id": 25482,
+        "original_language": "es",
+        "original_title": "Canciones de amor en Lolita's Club",
+        "overview": "The plot follows the story of twin brothers, one is a coldhearted violent police officer, the other is a helpless romantic with a mental disability. The two brothers are tragically involved with a prostitute who works in the bordello that gives the film its title. The film was adapted from an eponymous novel written by Juan Marsé.",
+        "popularity": 8.311,
+        "poster_path": "/7sEqYPJGHsHKVfY56XXccPuvVuy.jpg",
+        "release_date": "2007-11-30",
+        "title": "Lolita's Club",
+        "video": false,
+        "vote_average": 4.857,
+        "vote_count": 21
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/1VqE5z4VIOcNcajJuHLk4fDkY9G.jpg",
+        "genre_ids": [
+          28,
+          27
+        ],
+        "id": 289732,
+        "original_language": "zh",
+        "original_title": "屍城",
+        "overview": "It's the end of the century at a corner of the city in a building riddled with crime - Everyone in the building has turned into zombies. After Jenny's boyfriend is killed in a zombie attack, she faces the challenge of surviving in the face of adversity. In order to stay alive, she struggles with Andy to flee danger.",
+        "popularity": 14.597,
+        "poster_path": "/u8u3KVq0qfJYmNDsaTVOXy4So6f.jpg",
+        "release_date": "2014-10-23",
+        "title": "Zombie Fight Club",
+        "video": false,
+        "vote_average": 5.607,
+        "vote_count": 84
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/dQR8bwGrHMI7WVzd3Lgub6QJO83.jpg",
+        "genre_ids": [
+          35,
+          10751
+        ],
+        "id": 946740,
+        "original_language": "es",
+        "original_title": "Papá al rescate",
+        "overview": "Racing against time, a Chilean dad and his friends embark on a mishap-filled adventure across the Andes to gain custody of a daughter he's never met.",
+        "popularity": 6.021,
+        "poster_path": "/58M942zqHuBiS1m8v8hKb66tnbK.jpg",
+        "release_date": "2023-01-05",
+        "title": "The Lulú Club",
+        "video": false,
+        "vote_average": 5.778,
+        "vote_count": 27
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/s8cfX8WdUS4HMvCOtiaL2jpD3YU.jpg",
+        "genre_ids": [
+          18,
+          27,
+          53
+        ],
+        "id": 12720,
+        "original_language": "ja",
+        "original_title": "自殺サークル",
+        "overview": "When 54 high school girls throw themselves in front of a subway train it appears to be only the beginning of a string of suicides around the country. Does the new all-girl group Desert have anything to do with it? Detective Kuroda tries to find the answer, which isn't as simple as he had hoped.",
+        "popularity": 8.979,
+        "poster_path": "/pnmP8OdxzzoYskyx7GbO0EGL6Dk.jpg",
+        "release_date": "2001-10-29",
+        "title": "Suicide Club",
+        "video": false,
+        "vote_average": 6.565,
+        "vote_count": 429
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/cYyUinLXRbQwE4PAt2mQLTGBqti.jpg",
+        "genre_ids": [
+          28,
+          9648,
+          53
+        ],
+        "id": 876969,
+        "original_language": "en",
+        "original_title": "Assassin Club",
+        "overview": "In this world of contract killers, Morgan Gaines is the best of the best. When Morgan is hired to kill six people around the world, he soon discovers all the targets are also assassins unknowingly hired to kill each other.",
+        "popularity": 31.362,
+        "poster_path": "/y2d2SBqK33mGOG2CqAYMo3YbWE4.jpg",
+        "release_date": "2023-02-24",
+        "title": "Assassin Club",
+        "video": false,
+        "vote_average": 6.199,
+        "vote_count": 103
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/fLZJM6ECTg3XgYuPHwpvRMqCgCl.jpg",
+        "genre_ids": [
+          28,
+          12,
+          10751,
+          878
+        ],
+        "id": 549945,
+        "original_language": "nl",
+        "original_title": "De Club van Lelijke Kinderen",
+        "overview": "“Keep it clean!” – The new president is serious about that, including looks. When Paul, whose large jug ears are quite apparent on class photo day, and some of the other “ugly” kids are taken on a surprise trip, they realize that the president wants to hide them away. On the run, Paul is helped by Sara, one of the “pretty” kids. They start an underground club to fight against the president. The movement soon turns into a revolution. The kids show the world that even children can rise up – and that you don’t have to be “pretty” to be a hero!",
+        "popularity": 4.3,
+        "poster_path": "/wDEXvrSrfJxy1MJFeezrYb5fSv7.jpg",
+        "release_date": "2019-10-09",
+        "title": "The Club of Ugly Children",
+        "video": false,
+        "vote_average": 6.6,
+        "vote_count": 22
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/3n0jLpFcrws9AstGRGGGX4hkNDa.jpg",
+        "genre_ids": [
+          10751,
+          16,
+          10770
+        ],
+        "id": 280221,
+        "original_language": "en",
+        "original_title": "Mickey Mouse Clubhouse: Mickey's Adventures in Wonderland",
+        "overview": "Get ready to join Mickey and friends on their most amazing adventure ever -- a new movie classic inspired by Disney's ALICE IN WONDERLAND. It's Daisy Duck's birthday, and, in preparation, Mickey Mouse and Donald Duck have arranged a surprise party and bought a cuckoo clock as a present. However, the bird inside the clock escapes, leading Donald and Mickey into a strange fantasy world, modeled after Lewis Carroll's Wonderland. Some friends tag along for the journey, and some even appear as characters from the original tale. Goofy becomes the Goofy Hatter and Clarabelle Cow becomes Queen Clarabelle.",
+        "popularity": 5.527,
+        "poster_path": "/gmRb7sEuhSaZHZlfuPR4azETjzw.jpg",
+        "release_date": "2009-09-08",
+        "title": "Mickey Mouse Clubhouse: Mickey's Adventures in Wonderland",
+        "video": true,
+        "vote_average": 7.625,
+        "vote_count": 8
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/b4iA0RZ4CbPC6AHODm8YxVUpIwA.jpg",
+        "genre_ids": [
+          27,
+          35
+        ],
+        "id": 499195,
+        "original_language": "pt",
+        "original_title": "O Clube dos Canibais",
+        "overview": "Otavio and Gilda are a very wealthy couple of the Brazilian elite who have the habit of eating their employees. Otavio owns a private security company and is a notable member of The Cannibal Club. When Gilda accidentally discovers a secret from Borges, a powerful congressman and the Club’s leader, her and her husband’s lives are in grave danger.",
+        "popularity": 2.032,
+        "poster_path": "/iTKlgGr2v1rgRKs1Ptd9u8aVCTu.jpg",
+        "release_date": "2019-10-03",
+        "title": "The Cannibal Club",
+        "video": false,
+        "vote_average": 5.816,
+        "vote_count": 38
+      },
+      {
+        "adult": false,
+        "backdrop_path": null,
+        "genre_ids": [
+          10751,
+          16,
+          35,
+          10402,
+          10770
+        ],
+        "id": 642488,
+        "original_language": "en",
+        "original_title": "Mickey's Safety Club: Street Safe, Street Smart",
+        "overview": "Mickey and his friends take a close look at important street safety situations and tips.",
+        "popularity": 2.394,
+        "poster_path": "/4pfoP47sMClmkXwYYaUfb8gl08T.jpg",
+        "release_date": "1989-09-01",
+        "title": "Mickey's Safety Club: Street Safe, Street Smart",
+        "video": false,
+        "vote_average": 9.472,
+        "vote_count": 36
+      },
+      {
+        "adult": false,
+        "backdrop_path": "/qo6SGSBxE3sopdFoXwxygBQd7C5.jpg",
+        "genre_ids": [
+          10749
+        ],
+        "id": 787074,
+        "original_language": "ko",
+        "original_title": "18 클럽녀 새봄의 섹스 파티",
+        "overview": "Since young, Yeon-joo have a crush on her neighborhood brother, Jae-kyeong. Min-soo, had that kind of Yeon-joo in his mind. Whenever she's stressed, she would run to Min-soo A friend. A close secret with a childhood friend and the heart of Yeon-ju who loves him. Will Jae-kyeong be able to accept Yeon-joo as a woman who is younger than him? The unknown love story is just beginning.",
+        "popularity": 4.096,
+        "poster_path": "/46327qWeMk4RixQgI9aR0d19gNg.jpg",
+        "release_date": "2021-01-13",
+        "title": "18 Year Old Clubber Sae-bom's Sex Party",
+        "video": false,
+        "vote_average": 6.8,
+        "vote_count": 2
       }
     ],
-    "homepage": "http://www.foxmovies.com/movies/fight-club",
-    "id": 550,
-    "imdb_id": "tt0137523",
-    "original_language": "en",
-    "original_title": "Fight Club",
-    "overview": "A ticking-time-bomb insomniac and a slippery soap salesman channel primal male aggression into a shocking new form of therapy. Their concept catches on, with underground \"fight clubs\" forming in every town, until an eccentric gets in the way and ignites an out-of-control spiral toward oblivion.",
-    "popularity": 67.689,
-    "poster_path": "/pB8BM7pdSp6B6Ih7QZ4DrQ3PmJK.jpg",
-    "production_companies": [
-      {
-        "id": 508,
-        "logo_path": "/7cxRWzi4LsVm4Utfpr1hfARNurT.png",
-        "name": "Regency Enterprises",
-        "origin_country": "US"
-      },
-      {
-        "id": 711,
-        "logo_path": "/tEiIH5QesdheJmDAqQwvtN60727.png",
-        "name": "Fox 2000 Pictures",
-        "origin_country": "US"
-      },
-      {
-        "id": 20555,
-        "logo_path": "/hD8yEGUBlHOcfHYbujp71vD8gZp.png",
-        "name": "Taurus Film",
-        "origin_country": "DE"
-      },
-      {
-        "id": 54051,
-        "logo_path": null,
-        "name": "Atman Entertainment",
-        "origin_country": ""
-      },
-      {
-        "id": 54052,
-        "logo_path": null,
-        "name": "Knickerbocker Films",
-        "origin_country": "US"
-      },
-      {
-        "id": 4700,
-        "logo_path": "/A32wmjrs9Psf4zw0uaixF0GXfxq.png",
-        "name": "The Linson Company",
-        "origin_country": "US"
-      },
-      {
-        "id": 25,
-        "logo_path": "/qZCc1lty5FzX30aOCVRBLzaVmcp.png",
-        "name": "20th Century Fox",
-        "origin_country": "US"
-      }
-    ],
-    "production_countries": [
-      {
-        "iso_3166_1": "US",
-        "name": "United States of America"
-      }
-    ],
-    "release_date": "1999-10-15",
-    "revenue": 100853753,
-    "runtime": 139,
-    "spoken_languages": [
-      {
-        "english_name": "English",
-        "iso_639_1": "en",
-        "name": "English"
-      }
-    ],
-    "status": "Released",
-    "tagline": "Mischief. Mayhem. Soap.",
-    "title": "Fight Club",
-    "video": false,
-    "vote_average": 8.435,
-    "vote_count": 26627
+    "total_pages": 102,
+    "total_results": 2024
   }

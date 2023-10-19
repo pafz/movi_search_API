@@ -11,6 +11,7 @@ const yyyy = document.getElementById('yyyy');
 const adult = document.getElementById('adult');
 
 let nextBtnPrinted = false;
+let i = 0;
 
 const toggleFilters = async e => {
   e.preventDefault();
@@ -30,12 +31,12 @@ const searchMovies = async (page = 1) => {
     const res = await axios.get(
       'https://api.themoviedb.org/3/search/movie?' +
         'query=' +
-        titleSearch.value +
+        // titleSearch.value +
+        'club' +
         '&year=' +
         yyyy.value +
         '&page=' +
         page +
-        // 'club' +
         // '&year=1984' +
         // '&include_adult=' +
         // adult.checked +
@@ -45,58 +46,73 @@ const searchMovies = async (page = 1) => {
       // yyyy.value +
       // adult.value
     );
+    console.log(res);
 
-    let i = 0;
-    while (i < res.data.results.length) {
-      const resPoster = res.data.results[i].poster_path;
-      const resTitle = res.data.results[i].original_title;
-      const resGenre = res.data.results[i].genre_ids;
-      const resOverview = res.data.results[i].overview;
-      const resPopularity = res.data.results[i].popularity;
-      let resReleaseDate = res.data.results[i].release_date;
-      const resVoteAverage = res.data.results[i].vote_average;
-      const resAdult = res.data.results[i].adult;
-      let iPages = res.data.page;
+    let count = 0;
+    res.data.results.length;
 
-      container.appendChild(div);
+    while (count < 20) {
+      if (i < res.data.total_results) {
+        console.log(i + ' i');
+        console.log(res.data.total_results + ' total');
+        console.log(count + ' count');
+        const resPoster = res.data.results[i].poster_path;
+        const resTitle = res.data.results[i].original_title;
+        const resGenre = res.data.results[i].genre_ids;
+        const resOverview = res.data.results[i].overview;
+        const resPopularity = res.data.results[i].popularity;
+        let resReleaseDate = res.data.results[i].release_date;
+        const resVoteAverage = res.data.results[i].vote_average;
+        const resAdult = res.data.results[i].adult;
+        let iPages = res.data.page;
 
-      let img = document.createElement('img');
-      img.setAttribute('src', 'https://image.tmdb.org/t/p/w500/' + resPoster);
-      div.appendChild(img);
+        container.appendChild(div);
 
-      let h4 = document.createElement('h4');
-      h4.innerHTML = resGenre + ' genre/s';
-      div.appendChild(h4);
+        let img = document.createElement('img');
+        img.setAttribute('src', 'https://image.tmdb.org/t/p/w500/' + resPoster);
+        div.appendChild(img);
 
-      let h1 = document.createElement('h1');
-      h1.innerText = resTitle;
-      div.appendChild(h1);
+        let h4 = document.createElement('h4');
+        h4.innerHTML = resGenre + ' genre/s';
+        div.appendChild(h4);
 
-      let pOverview = document.createElement('p');
-      pOverview.innerHTML = resOverview;
-      div.appendChild(pOverview);
+        let h1 = document.createElement('h1');
+        h1.innerText = resTitle;
+        div.appendChild(h1);
 
-      let pPopularity = document.createElement('p');
-      pPopularity.innerHTML = resPopularity + ' popularity';
-      div.appendChild(pPopularity);
+        let pOverview = document.createElement('p');
+        pOverview.innerHTML = resOverview;
+        div.appendChild(pOverview);
 
-      let pReleaseDate = document.createElement('p');
-      const reverseDate = resReleaseDate => {
-        return resReleaseDate.split('-').reverse().join('-');
-      };
-      resReleaseDate = reverseDate(resReleaseDate);
-      pReleaseDate.innerHTML = resReleaseDate;
-      div.appendChild(pReleaseDate);
+        let pPopularity = document.createElement('p');
+        pPopularity.innerHTML = resPopularity + ' popularity';
+        div.appendChild(pPopularity);
 
-      let pVoteAverage = document.createElement('p');
-      pVoteAverage.innerHTML = resVoteAverage + ' average vote';
-      div.appendChild(pVoteAverage);
+        let pReleaseDate = document.createElement('p');
+        const reverseDate = resReleaseDate => {
+          return resReleaseDate.split('-').reverse().join('-');
+        };
+        resReleaseDate = reverseDate(resReleaseDate);
+        pReleaseDate.innerHTML = resReleaseDate;
+        div.appendChild(pReleaseDate);
 
-      i++;
+        let pVoteAverage = document.createElement('p');
+        pVoteAverage.innerHTML = resVoteAverage + ' average vote';
+        div.appendChild(pVoteAverage);
+
+        i++;
+        count++;
+      }
     }
 
     const totalPages = res.data.total_pages;
     if (totalPages > 1) {
+      console.log(totalPages);
+      let ppage = document.createElement('p');
+      ppage.innerHTML = page;
+      search.appendChild(ppage);
+      console.log(ppage);
+
       if (!nextBtnPrinted) {
         nextBtnPrinted = true;
         let nextBtn = document.createElement('button');
@@ -107,6 +123,7 @@ const searchMovies = async (page = 1) => {
 
       nextBtn.addEventListener('click', () => {
         div.innerHTML = '';
+        ppage.innerHTML = '';
         page++;
         searchMovies(page);
       });

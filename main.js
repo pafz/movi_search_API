@@ -1,17 +1,17 @@
 const submitBtn = document.getElementById('searchBtn');
 const resetBtn = document.getElementById('reset');
-const container = document.getElementById('film-info');
+const containerInfo = document.getElementById('film-info');
 const titleSearch = document.getElementById('titleSearch');
 const optionalBtn = document.getElementById('optional');
 
-const div = document.createElement('div');
 const search = document.getElementById('search');
 
 const yyyy = document.getElementById('yyyy');
 const adult = document.getElementById('adult');
 
 let nextBtnPrinted = false;
-let i = 0;
+let count = 0;
+let page = 1;
 
 const toggleFilters = async e => {
   e.preventDefault();
@@ -26,13 +26,13 @@ const toggleFilters = async e => {
   }
 };
 
-const searchMovies = async (page = 1) => {
+const searchMovies = async () => {
   try {
     const res = await axios.get(
       'https://api.themoviedb.org/3/search/movie?' +
         'query=' +
-        // titleSearch.value +
-        'club' +
+        titleSearch.value +
+        // 'club' +
         '&year=' +
         yyyy.value +
         '&page=' +
@@ -48,85 +48,66 @@ const searchMovies = async (page = 1) => {
     );
     console.log(res);
 
-    let count = 0;
-    res.data.results.length;
+    let i = 0;
 
-    while (count < 20) {
-      if (i < res.data.total_results) {
-        console.log(i + ' i');
-        console.log(res.data.total_results + ' total');
-        console.log(count + ' count');
-        const resPoster = res.data.results[i].poster_path;
-        const resTitle = res.data.results[i].original_title;
-        const resGenre = res.data.results[i].genre_ids;
-        const resOverview = res.data.results[i].overview;
-        const resPopularity = res.data.results[i].popularity;
-        let resReleaseDate = res.data.results[i].release_date;
-        const resVoteAverage = res.data.results[i].vote_average;
-        const resAdult = res.data.results[i].adult;
-        let iPages = res.data.page;
-
-        container.appendChild(div);
-
+    res.data.results.forEach(
+      ({
+        poster_path,
+        original_title,
+        genre_ids,
+        overview,
+        popularity,
+        release_date,
+        vote_average,
+      }) => {
         let img = document.createElement('img');
-        img.setAttribute('src', 'https://image.tmdb.org/t/p/w500/' + resPoster);
-        div.appendChild(img);
-
+        img.setAttribute(
+          'src',
+          'https://image.tmdb.org/t/p/w500/' + poster_path
+        );
+        containerInfo.appendChild(img);
         let h4 = document.createElement('h4');
-        h4.innerHTML = resGenre + ' genre/s';
-        div.appendChild(h4);
-
+        h4.innerHTML = genre_ids + ' genre/s';
+        containerInfo.appendChild(h4);
         let h1 = document.createElement('h1');
-        h1.innerText = resTitle;
-        div.appendChild(h1);
-
+        h1.innerText = original_title;
+        containerInfo.appendChild(h1);
         let pOverview = document.createElement('p');
-        pOverview.innerHTML = resOverview;
-        div.appendChild(pOverview);
-
+        pOverview.innerHTML = overview;
+        containerInfo.appendChild(pOverview);
         let pPopularity = document.createElement('p');
-        pPopularity.innerHTML = resPopularity + ' popularity';
-        div.appendChild(pPopularity);
-
+        pPopularity.innerHTML = popularity + ' popularity';
+        containerInfo.appendChild(pPopularity);
         let pReleaseDate = document.createElement('p');
-        const reverseDate = resReleaseDate => {
-          return resReleaseDate.split('-').reverse().join('-');
+        const reverseDate = release_date => {
+          return release_date.split('-').reverse().join('-');
         };
-        resReleaseDate = reverseDate(resReleaseDate);
-        pReleaseDate.innerHTML = resReleaseDate;
-        div.appendChild(pReleaseDate);
-
+        release_date = reverseDate(release_date);
+        pReleaseDate.innerHTML = release_date;
+        containerInfo.appendChild(pReleaseDate);
         let pVoteAverage = document.createElement('p');
-        pVoteAverage.innerHTML = resVoteAverage + ' average vote';
-        div.appendChild(pVoteAverage);
-
-        i++;
-        count++;
+        pVoteAverage.innerHTML = vote_average + ' average vote';
+        containerInfo.appendChild(pVoteAverage);
       }
-    }
+    );
 
     const totalPages = res.data.total_pages;
-    if (totalPages > 1) {
-      console.log(totalPages);
-      let ppage = document.createElement('p');
-      ppage.innerHTML = page;
-      search.appendChild(ppage);
-      console.log(ppage);
 
+    if (totalPages > 1 && page <= totalPages) {
       if (!nextBtnPrinted) {
         nextBtnPrinted = true;
         let nextBtn = document.createElement('button');
         nextBtn.setAttribute('id', 'nextBtn');
-        nextBtn.innerText = 'next';
+        nextBtn.innerText = 'next page 2';
         search.appendChild(nextBtn);
-      }
 
-      nextBtn.addEventListener('click', () => {
-        div.innerHTML = '';
-        ppage.innerHTML = '';
-        page++;
-        searchMovies(page);
-      });
+        nextBtn.addEventListener('click', () => {
+          containerInfo.innerHTML = '';
+          nextBtn.innerText = 'next page' + (page + 2);
+          page++;
+          searchMovies();
+        });
+      }
     }
   } catch (err) {
     console.error(err);

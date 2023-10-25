@@ -93,20 +93,26 @@ const searchMovies = async () => {
 
     const totalPages = res.data.total_pages;
 
-    if (totalPages > 1 && page <= totalPages) {
-      if (!nextBtnPrinted) {
-        nextBtnPrinted = true;
-        let nextBtn = document.createElement('button');
-        nextBtn.setAttribute('id', 'nextBtn');
-        nextBtn.innerText = 'next page 2';
-        search.appendChild(nextBtn);
+    if (totalPages > 1) {
+      if (page <= totalPages) {
+        if (!nextBtnPrinted) {
+          nextBtnPrinted = true;
+          let nextBtn = document.createElement('button');
+          nextBtn.setAttribute('id', 'nextBtn');
+          nextBtn.innerText = 'next page 2';
+          search.appendChild(nextBtn);
 
-        nextBtn.addEventListener('click', () => {
-          containerInfo.innerHTML = '';
-          nextBtn.innerText = 'next page' + (page + 2);
-          page++;
-          searchMovies();
-        });
+          nextBtn.addEventListener('click', () => {
+            containerInfo.innerHTML = '';
+            nextBtn.innerText = 'next page' + (page + 2);
+            page++;
+            searchMovies();
+            if (page == totalPages) {
+              let btn = document.getElementById('nextBtn');
+              btn.remove();
+            }
+          });
+        }
       }
     }
   } catch (err) {

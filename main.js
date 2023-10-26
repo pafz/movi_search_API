@@ -3,11 +3,8 @@ const resetBtn = document.getElementById('reset');
 const containerInfo = document.getElementById('film-info');
 const titleSearch = document.getElementById('titleSearch');
 const optionalBtn = document.getElementById('optional');
-
-const search = document.getElementById('search');
-
 const yyyy = document.getElementById('yyyy');
-const adult = document.getElementById('adult');
+const search = document.getElementById('search');
 
 let nextBtnPrinted = false;
 let count = 0;
@@ -32,19 +29,11 @@ const searchMovies = async () => {
       'https://api.themoviedb.org/3/search/movie?' +
         'query=' +
         titleSearch.value +
-        // 'club' +
         '&year=' +
         yyyy.value +
         '&page=' +
         page +
-        // '&year=1984' +
-        // '&include_adult=' +
-        // adult.checked +
         '&api_key=600dc298bedbd11d25118262a343371d'
-      // +
-      // '&include_adult=false&language=en-US&page=1&api_key=600dc298bedbd11d25118262a343371d' +
-      // yyyy.value +
-      // adult.value
     );
     console.log(res);
 

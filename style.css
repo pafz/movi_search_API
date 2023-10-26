@@ -30,8 +30,10 @@ footer {
 
 section {
     display: flex;
-    padding-top: 5%;
-    /* justify-content: space-evenly; */
+    /* padding-top: 5%; */
+    margin: 3%;
+    flex-grow: 4;
+    justify-content: space-evenly;
     align-items: center;
     justify-content: center;
 }
@@ -40,24 +42,45 @@ section {
     display: none;
 }
 
-input, #optional {
+input, #optional, #searchBtn, #nextBtn{
     background-color: rgb(251, 251, 251);
-    border-radius: 3px;
+    border-radius: 6px;
 }
 
 #titleSearch {
     max-width: 45%;
 }
 
-#submit, #reset, #optional {
+#submit, #reset, #optional, #searchBtn, #nextBtn, #titleSearch, #yyyy {
     padding: 1% 1%;
+    margin: 1% 0 0 0;
+    border-style: outset;
+    border-color: rgba(72, 50, 46, 0.479);
+}
+
+#titleSearch {
+    border-style: inset;
+}
+
+#reset{
+    float: right;
+}
+
+#nextBtn {
+    /* display: block; */
+    justify-content: space-around;
+    height: 27.05;
+    width: 60%;
+    /* padding: 1px; */
+    display: inline-block;
+    float: right;
 }
 
 /*=======================
         pseudo-clase
 =======================*/
-#submit:hover,
-#submit:focus {
+#searchBtn:hover,
+#searchBtn:focus {
     background: #e3ffdf;
 }
 
@@ -66,7 +89,7 @@ input, #optional {
     background: #ffc1b9;
 }
 
-button:focus {
+button:focus, #searchBtn {
     outline: 1px solid #fff;
     outline-offset: -4px;
 }
@@ -76,10 +99,23 @@ button:active {
 }
 /* pseudo-clase */
 
+#film-info {
+    display: flex;
+    flex-direction: column;
+    align-items: center;
+    justify-content: flex-start;
+    padding: 2%;
+}
+
 img {
-    padding-top: 10%;
-    padding-left: 2%; 
+    padding-top: 6%;
     max-width: 96%;
+    /* display: inline-block */
+    align-items: center;
+}
+
+p {
+    padding-top: 1%;
 }
 
 /*=======================

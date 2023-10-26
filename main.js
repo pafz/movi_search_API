@@ -1,8 +1,10 @@
+const form = document.getElementById('form');
 const submitBtn = document.getElementById('searchBtn');
 const resetBtn = document.getElementById('reset');
 const containerInfo = document.getElementById('film-info');
 const titleSearch = document.getElementById('titleSearch');
 const optionalBtn = document.getElementById('optional');
+const optionalDiv = document.getElementById('optionalDiv');
 const yyyy = document.getElementById('yyyy');
 const search = document.getElementById('search');
 
@@ -88,12 +90,14 @@ const searchMovies = async () => {
           nextBtnPrinted = true;
           let nextBtn = document.createElement('button');
           nextBtn.setAttribute('id', 'nextBtn');
+          nextBtn.setAttribute('type', 'button');
           nextBtn.innerText = 'next page 2';
-          search.appendChild(nextBtn);
+          // optionalBtn.appendChild(nextBtn); /*changed search*/
+          optionalBtn.after(nextBtn);
 
           nextBtn.addEventListener('click', () => {
             containerInfo.innerHTML = '';
-            nextBtn.innerText = 'next page' + (page + 2);
+            nextBtn.innerText = 'next page ' + (page + 2);
             page++;
             searchMovies();
             if (page == totalPages) {

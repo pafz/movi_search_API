@@ -108,8 +108,8 @@ const searchMovies = async () => {
             page++;
             searchMovies();
             if (page == totalPages) {
-              let btn = document.getElementById('nextBtn');
-              btn.remove();
+              let nextBtn = document.getElementById('nextBtn');
+              nextBtn.setAttribute('disabled', 'disabled');
             }
           });
         }
@@ -122,7 +122,6 @@ const searchMovies = async () => {
 
 const resetApi = async e => {
   e.preventDefault();
-
   try {
     const empty = e => {
       while (e.firstElementChild) {
@@ -131,6 +130,12 @@ const resetApi = async e => {
     };
     let parent = document.getElementById('film-info');
     empty(parent);
+
+    let nextBtn = document.getElementById('nextBtn');
+    nextBtn.remove();
+    nextBtnPrinted = false;
+    page = 1;
+    titleSearch.value = '';
   } catch (err) {
     console.error(err);
   }

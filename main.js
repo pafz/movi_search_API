@@ -35,7 +35,8 @@ const searchMovies = async () => {
         yyyy.value +
         '&page=' +
         page +
-        '&api_key=600dc298bedbd11d25118262a343371d'
+        '&api_key=600dc298bedbd11d25118262a343371d' +
+        '&with_genres=35|37|80'
     );
     console.log(res);
 
@@ -51,34 +52,37 @@ const searchMovies = async () => {
         release_date,
         vote_average,
       }) => {
+        let divContainer = document.createElement('div');
+        containerInfo.appendChild(divContainer);
+
         let img = document.createElement('img');
         img.setAttribute(
           'src',
           'https://image.tmdb.org/t/p/w500/' + poster_path
         );
-        containerInfo.appendChild(img);
+        divContainer.appendChild(img);
         let h4 = document.createElement('h4');
         h4.innerHTML = genre_ids + ' genre/s';
-        containerInfo.appendChild(h4);
+        divContainer.appendChild(h4);
         let h1 = document.createElement('h1');
         h1.innerText = original_title;
-        containerInfo.appendChild(h1);
+        divContainer.appendChild(h1);
         let pOverview = document.createElement('p');
         pOverview.innerHTML = overview;
-        containerInfo.appendChild(pOverview);
+        divContainer.appendChild(pOverview);
         let pPopularity = document.createElement('p');
         pPopularity.innerHTML = popularity + ' popularity';
-        containerInfo.appendChild(pPopularity);
+        divContainer.appendChild(pPopularity);
         let pReleaseDate = document.createElement('p');
         const reverseDate = release_date => {
           return release_date.split('-').reverse().join('-');
         };
         release_date = reverseDate(release_date);
         pReleaseDate.innerHTML = release_date;
-        containerInfo.appendChild(pReleaseDate);
+        divContainer.appendChild(pReleaseDate);
         let pVoteAverage = document.createElement('p');
         pVoteAverage.innerHTML = vote_average + ' average vote';
-        containerInfo.appendChild(pVoteAverage);
+        divContainer.appendChild(pVoteAverage);
       }
     );
 
@@ -92,7 +96,6 @@ const searchMovies = async () => {
           nextBtn.setAttribute('id', 'nextBtn');
           nextBtn.setAttribute('type', 'button');
           nextBtn.innerText = 'next page 2';
-          // optionalBtn.appendChild(nextBtn); /*changed search*/
           optionalBtn.after(nextBtn);
 
           nextBtn.addEventListener('click', () => {
@@ -125,10 +128,11 @@ const resetApi = async e => {
     empty(parent);
 
     let nextBtn = document.getElementById('nextBtn');
-    nextBtn.remove();
+    nextBtn?.remove();
     nextBtnPrinted = false;
     page = 1;
     titleSearch.value = '';
+    yyyy.value = '';
   } catch (err) {
     console.error(err);
   }

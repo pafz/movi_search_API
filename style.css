@@ -15,8 +15,10 @@ body {
     padding-bottom:60px;
 }
 
-main {
+body {
     padding-bottom: 79px;
+    align-items: center;
+    width: 100%;
 }
 
 footer {
@@ -56,7 +58,7 @@ input, #optional, #searchBtn, #nextBtn{
     max-width: 45%;
 }
 
-#submit, #reset, #optional, #searchBtn, #nextBtn, #titleSearch, #yyyy {
+#submit, #reset, #optional, #searchBtn, #nextBtn, #titleSearch, #yyyy, #topBtn {
     padding: 1% 1%;
     margin: 1% 0 0 0;
     border-style: outset;
@@ -72,13 +74,48 @@ input, #optional, #searchBtn, #nextBtn{
 }
 
 #nextBtn {
-    /* display: block; */
     justify-content: space-around;
     height: 27.05;
     width: 60%;
-    /* padding: 1px; */
     display: inline-block;
     float: right;
+}
+#film-info {
+    padding: 20px;
+    letter-spacing: 0px;
+    word-spacing: 0px;
+}
+
+div {
+    width: 100%;
+    display: block;
+    border: 1px solid black;
+    margin: auto;
+    margin-bottom: 20px;
+}
+
+img {
+    padding-top: 6%;
+    align-items: center;
+    display: block;
+    margin-left: auto;
+    margin-right: auto;
+    width: 97%;
+}
+
+h4 {
+    margin-top: 2%;
+    text-align: center;
+    color: #8b8b8b;
+}
+
+h1 {
+    margin: 2%;
+    text-align: center;
+}
+
+p {
+    margin: 1% 2%;
 }
 
 /*=======================
@@ -102,34 +139,9 @@ button:focus, #searchBtn {
 button:active {
     transform: scale(0.99);
 }
-
-#film-info {
-    display: flex;
-    flex-direction: column;
-    align-items: center;
-    justify-content: flex-start;
-    padding: 2%;
-}
 /* pseudo-clase */
 
-img {
-    padding-top: 6%;
-    align-items: center;
-    display: block;
-    margin-left: auto;
-    margin-right: auto;
-    width: 97%;
-}
 
-h4 {
-    margin-top: 2%;
-    text-align: center;
-    color: #8b8b8b;
-}
-
-p {
-    margin-top: 1%;
-}
 /*=======================
         600
 =======================*/
@@ -137,19 +149,9 @@ p {
     body {
         background-color: #ffdff0;
     }
-    #film-info {
-        display: flex;
-    }
     div {
-        flex: 33.33%;
-	  height: 200px;
-	  padding: 10px;
-	  margin: 5px;
-	  background-color: #cccccc;
-	  text-align: center;
+        width: 80%;
     }
-
-
 }
 /* 600 */
 
@@ -160,32 +162,15 @@ p {
     body {
         background-color: #e3ffdf;
     }
-    .flex-container {
-        flex-direction: row;
-        gap: 20px;
+    #film-info {
+        padding: 0;
     }
-    /* #optional {
-        position: relative;
-        top: 35px;
-        left: -333px;
-    } */
-
-    .flex-reverse {
-        flex-direction: row-reverse;
-    }
-
-    .box {
-        width: calc(50% - 10px);
-    }
-
-    .grid {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(2, minmax(0, 1fr));
-    }
-
-    .text {
-        font-size: 2em;
+    div {
+        margin: 0.5%;
+        width: 49%;
+        display: inline-block;
+        box-sizing: border-box;
+        justify-content: space-between;
     }
 }
 /* 768 */
@@ -197,8 +182,14 @@ p {
     body {
         background-color: #f9dfff;
     }
-    film-info {
+    #film-info {
         color: #ffc1b9;
+    }
+    div {
+        width: 32%;
+        display: inline-block;
+        margin: 0.66%;
+        /* align-self: flex-start; */
     }
 }
 /* 992 */
@@ -210,21 +201,13 @@ p {
     body {
         background-color: #dffbff;
     }
-    
-    .box {
-        width: auto;
-        flex: 1;
-        min-width: 30%;
+    #film-info {
+        color: #ffc1b9;
     }
-
-    .grid {
-        display: grid;
-        grid-gap: 10px;
-        grid-template-columns: repeat(3, minmax(0, 1fr));
-    }
-
-    .text {
-        font-size: 2.5em;
+    div {
+        width: 24%;
+        display: inline-block;
+        margin: 0.5%;
     }
 }
 /* 1200 */

@@ -7,6 +7,7 @@ const optionalBtn = document.getElementById('optional');
 const optionalDiv = document.getElementById('optionalDiv');
 const yyyy = document.getElementById('yyyy');
 const search = document.getElementById('search');
+const topBtn = document.getElementById('topBtn');
 
 let nextBtnPrinted = false;
 let count = 0;
@@ -92,6 +93,13 @@ const searchMovies = async () => {
       if (page <= totalPages) {
         if (!nextBtnPrinted) {
           nextBtnPrinted = true;
+
+          let previousBtn = document.createElement('button');
+          previousBtn.setAttribute('id', 'previousBtn');
+          previousBtn.setAttribute('type', 'button');
+          previousBtn.innerText = 'previous';
+          optionalBtn.after(previousBtn);
+
           let nextBtn = document.createElement('button');
           nextBtn.setAttribute('id', 'nextBtn');
           nextBtn.setAttribute('type', 'button');
@@ -138,8 +146,18 @@ const resetApi = async e => {
   }
 };
 
+const goTop = async e => {
+  e.preventDefault();
+  try {
+    document.documentElement.scrollTop = 0;
+  } catch (err) {
+    console.error(err);
+  }
+};
+
 submitBtn.addEventListener('click', () => {
   searchMovies();
 });
 resetBtn.addEventListener('click', resetApi);
 optionalBtn.addEventListener('click', toggleFilters);
+topBtn.addEventListener('click', goTop);

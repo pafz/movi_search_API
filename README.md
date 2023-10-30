@@ -35,3 +35,7 @@ First investigating and using the <a href="https://developer.themoviedb.org/docs
 
 - <a href="https://drive.google.com/file/d/1_0pz-5l3CrjjS2TqY9Ko7yip1yP5WCmG/view" blank>Asynchrony</a>
 - <a href="https://drive.google.com/file/d/1ghNaeGARFr1sEPVnYAN5vRXbDYtIDV-w/view" blank>Axios</a>
+
+## Contact
+
+<a href="https://www.linkedin.com/in/patricia-fernandez-zamanillo/" target="_blank"><img src="https://img.shields.io/badge/-LinkedIn-%230077B5?style=for-the-badge&logo=linkedin&logoColor=white" target="_blank"></a>

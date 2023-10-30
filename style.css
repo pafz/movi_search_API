@@ -1,4 +1,4 @@
-/* importar fuente desde 1 solo sitio, cual??? */
+
 *{
     margin: 0;
     padding: 0;
@@ -49,7 +49,7 @@ label {
     display: none;
 }
 
-input, #optional, #searchBtn, #nextBtn{
+input, #optional, #searchBtn, #nextBtn, #previousBtn, #topBtn{
     background-color: rgb(251, 251, 251);
     border-radius: 6px;
 }
@@ -58,14 +58,14 @@ input, #optional, #searchBtn, #nextBtn{
     max-width: 45%;
 }
 
-#submit, #reset, #optional, #searchBtn, #nextBtn, #titleSearch, #yyyy, #topBtn {
+#submit, #reset, #optional, #searchBtn, #nextBtn, #titleSearch, #yyyy, #topBtn, #previousBtn {
     padding: 1% 1%;
     margin: 1% 0 0 0;
     border-style: outset;
     border-color: rgba(72, 50, 46, 0.479);
 }
 
-#titleSearch {
+#titleSearch, #yyyy {
     border-style: inset;
 }
 
@@ -73,25 +73,32 @@ input, #optional, #searchBtn, #nextBtn{
     float: right;
 }
 
-#nextBtn {
+#previousBtn, #nextBtn {
     justify-content: space-around;
     height: 27.05;
-    width: 60%;
+    width: 30%;
     display: inline-block;
     float: right;
 }
+
+#topBtn {
+    margin: 6px;
+}
+
 #film-info {
     padding: 20px;
     letter-spacing: 0px;
     word-spacing: 0px;
 }
 
+
+
 div {
     width: 100%;
     display: block;
-    border: 1px solid black;
     margin: auto;
     margin-bottom: 20px;
+    vertical-align: top;
 }
 
 img {
@@ -116,6 +123,13 @@ h1 {
 
 p {
     margin: 1% 2%;
+}
+
+#currentPage {
+    margin: auto;
+    width: 50%;
+    padding: 10px;
+    text-align: center;
 }
 
 /*=======================
@@ -146,9 +160,9 @@ button:active {
         600
 =======================*/
 @media screen and (min-width: 600px){
-    body {
+    /* body {
         background-color: #ffdff0;
-    }
+    } */
     div {
         width: 80%;
     }
@@ -159,9 +173,9 @@ button:active {
         768
 =======================*/
 @media screen and (min-width: 768px){
-    body {
+    /* body {
         background-color: #e3ffdf;
-    }
+    } */
     #film-info {
         padding: 0;
     }
@@ -172,6 +186,12 @@ button:active {
         box-sizing: border-box;
         justify-content: space-between;
     }
+    #currentPage {
+        margin: auto;
+        width: 100%;
+        padding: 10px;
+        text-align: center;
+    }
 }
 /* 768 */
 
@@ -179,17 +199,13 @@ button:active {
         992
 =======================*/
 @media screen and (min-width: 992px){
-    body {
+    /* body {
         background-color: #f9dfff;
-    }
-    #film-info {
-        color: #ffc1b9;
-    }
+    } */
     div {
         width: 32%;
         display: inline-block;
         margin: 0.66%;
-        /* align-self: flex-start; */
     }
 }
 /* 992 */
@@ -198,12 +214,9 @@ button:active {
         1200
 ==========================*/
 @media screen and (min-width: 1200px){
-    body {
+    /* body {
         background-color: #dffbff;
-    }
-    #film-info {
-        color: #ffc1b9;
-    }
+    } */
     div {
         width: 24%;
         display: inline-block;

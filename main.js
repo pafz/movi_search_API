@@ -7,7 +7,12 @@ const optionalBtn = document.getElementById('optional');
 const optionalDiv = document.getElementById('optionalDiv');
 const yyyy = document.getElementById('yyyy');
 const search = document.getElementById('search');
+
 const topBtn = document.getElementById('topBtn');
+const currentPage = document.querySelector('#currentPage');
+const numCurrentPage = document.getElementById('numCurrentPage');
+
+currentPage.style.visibility = 'hidden';
 
 let nextBtnPrinted = false;
 let count = 0;
@@ -41,7 +46,7 @@ const searchMovies = async () => {
     );
     console.log(res);
 
-    let i = 0;
+    currentPage.style.visibility = 'visible';
 
     res.data.results.forEach(
       ({
@@ -90,6 +95,7 @@ const searchMovies = async () => {
     const totalPages = res.data.total_pages;
 
     if (totalPages > 1) {
+      numCurrentPage.innerText = page;
       if (page <= totalPages) {
         if (!nextBtnPrinted) {
           nextBtnPrinted = true;
@@ -100,15 +106,25 @@ const searchMovies = async () => {
           previousBtn.innerText = 'previous';
           optionalBtn.after(previousBtn);
 
+          previousBtn.addEventListener('click', () => {
+            containerInfo.innerHTML = '';
+            page--;
+            searchMovies();
+
+            if (page == 1) {
+              previousBtn.setAttribute('disabled', 'disabled');
+            }
+          });
+
           let nextBtn = document.createElement('button');
           nextBtn.setAttribute('id', 'nextBtn');
           nextBtn.setAttribute('type', 'button');
-          nextBtn.innerText = 'next page 2';
+          nextBtn.innerText = 'next page';
           optionalBtn.after(nextBtn);
 
           nextBtn.addEventListener('click', () => {
             containerInfo.innerHTML = '';
-            nextBtn.innerText = 'next page ' + (page + 2);
+
             page++;
             searchMovies();
             if (page == totalPages) {
@@ -135,12 +151,16 @@ const resetApi = async e => {
     let parent = document.getElementById('film-info');
     empty(parent);
 
-    let nextBtn = document.getElementById('nextBtn');
+    const currentPage = document.getElementById('currentPage');
+    const previousBtn = document.getElementById('previousBtn');
+    const nextBtn = document.getElementById('nextBtn');
     nextBtn?.remove();
+    previousBtn?.remove();
     nextBtnPrinted = false;
     page = 1;
     titleSearch.value = '';
     yyyy.value = '';
+    currentPage.style.visibility = 'hidden';
   } catch (err) {
     console.error(err);
   }
